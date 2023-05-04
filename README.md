@@ -1,4 +1,4 @@
-# MigrationCVStoGIT
+# Migration CVS to GIT
 
 ### Requisitos mínimos:
 
@@ -168,19 +168,38 @@
     ![](images/image12.png)
 
 7. Migrar el repositorio de cvs a git
-Creación de clave.
 
+    Creación de clave.
+    
+    ![](images/image9.png)
+    
     Añadimos la clave a GitLab.
 
-    ![]()
+    ![](images/image10.png)
 
     Creamos un nuevo repositorio.
 
-    ![]()
+    ![](images/image18.png)
 
     Instalamos git-cvsimport para pasar de un repositorio en cvs a uno en gitlab.
 
-    ![]()
+    ~~~
+    git cvsimport -C testrepo -r cvs -k -vA authors-file.txt -d $CVSROOT aplicacion
+    ~~~
+
+    Para el comando anterior deberemos tener el archivo authors-file.txt que contendrá el usuario del sistema y un correo.
+
+    ~~~
+    userid=[usuario] [correo electrónico]
+    ~~~
+
+    ![](images/image20.png)
+
+    Ya estaría configurado, para comprobarlo accedemos a la carpeta que hemos establecido con el parámetro *-C* añadimos la URL y hacemos un push.
+
+    ![](images/image29.png)
+
+
 
 8. Automatizar el séptimo paso con un script de python. Al lanzar este script se debe crear un repositorio en el gitlab y subir el repositorio migrado. Los parámetros de este script pueden ser los que queráis.
 
