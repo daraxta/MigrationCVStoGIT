@@ -104,20 +104,34 @@
 
 5. Instalarse cvs-fast-export (no vale con apt install pues la versión de los repositorios es antigua. Se recomienda descargarse el código del repositorio oficial y compilarlo)
 
-    Clonamos el repo
+    Clonamos el repositorio de cvs-fast-export
+
+    ![](images/image15.png)
 
     Primero ejecutamos la instalación de los paquetes necesarios.
 
+    ![](images/image21.png)
 
     Compilamos
 
+    ![](images/image5.png)
+
+
     Ya tendríamos el programa.
+
+    ![](images/image2.png)
 
     Para tener el comando global e instalado en la máquina cogeremos el siguiente comando
 
+    ~~~
     sudo install cvs-fast-export /usr/local/bin/cvs-fast-export
+    ~~~
+
+    ![](images/image11.png)
+
     Generamos un archivo con un determinado formato con la herramienta cvs-fast-export.
 
+    ![](images/image16.png)
 
 
 
@@ -125,27 +139,48 @@
 
     Primero instalamos docker
 
-    https://www.czerniga.it/2021/11/14/how-to-install-gitlab-using-docker-compose/ 
+    ![](images/image8.png)
 
+    Ahora ejecutamos el docker-compose.yaml que está en el repositorio, si posteriormente vamos a usar ssh tendremos que añadir el puerto.
+    [Enlace de ayuda](https://www.czerniga.it/2021/11/14/how-to-install-gitlab-using-docker-compose/). 
+
+    ![](images/image19.png)
+
+    Por último, los ejecutamos.
+
+    ![](images/image6.png)
+
+    Ya tenemos GitLab funcionando. 
+
+    ![](images/image14.png)
     
-    Ya tenemos GitLab funcionando para saber las credenciales entramos en la máquina en la siguiente ruta.
+    Para saber las credenciales entramos en la máquina en la siguiente ruta, el usuario es *root*.
 
+    ![](images/image23.png)
 
     Añadimos un usuario nuevo
     
+    ![](images/image24.png)
+    
+
     Para las pruebas y las subidas de los distintos repositorios usaremos el usuario creado anteriormente.
 
-
+    ![](images/image12.png)
 
 7. Migrar el repositorio de cvs a git
 Creación de clave.
 
     Añadimos la clave a GitLab.
 
+    ![]()
+
     Creamos un nuevo repositorio.
 
-    Instalamos git-cvsimport para pasar de un repo en cvs a uno en gitlab.
+    ![]()
 
+    Instalamos git-cvsimport para pasar de un repositorio en cvs a uno en gitlab.
+
+    ![]()
 
 8. Automatizar el séptimo paso con un script de python. Al lanzar este script se debe crear un repositorio en el gitlab y subir el repositorio migrado. Los parámetros de este script pueden ser los que queráis.
 
